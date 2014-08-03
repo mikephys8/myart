@@ -1,0 +1,18 @@
+{#extends means home.html will be shown inside of base.html#}
+{#(that's how django works#}
+{% extends "article/base.html" %}
+{% block content %}
+<ul>
+{% for article in articles %}
+
+    <li style="color:{%  cycle 'blue' 'green' %}">
+        <div>
+            <img src="{{ article.image }}" alt=""/>
+        </div>
+        {{ article.title }}
+    </li>
+
+{% endfor %}
+</ul>
+{#    <p>hello from mike</p>#}
+{% endblock %}
